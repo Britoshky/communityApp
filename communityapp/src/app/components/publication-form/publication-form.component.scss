@@ -1,0 +1,19 @@
+pwa-camera-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  form {
+    padding: 16px;
+  }
+  
+  ion-item {
+    margin-bottom: 12px;
+  }
+  
+  ion-button {
+    margin-top: 16px;
+    --background: #28a745; /* Verde para indicar éxito */
+  }
+  

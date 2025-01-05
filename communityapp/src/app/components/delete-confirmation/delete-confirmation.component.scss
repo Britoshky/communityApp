@@ -1,0 +1,27 @@
+.modal-container {
+  padding: 24px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 48px auto;
+}
+
+.modal-text {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.modal-button {
+  margin-bottom: 16px;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ion-header {
+  --background: #f8f9fa;
+  --color: #495057;
+}

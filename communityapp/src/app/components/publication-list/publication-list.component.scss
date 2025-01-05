@@ -1,0 +1,72 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: var(--ion-text-color);
+}
+
+.loading-container ion-spinner {
+  margin-bottom: 10px;
+}
+
+ion-list ion-item {
+  margin: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.pagination-container {
+  margin-bottom: 72px; /* Espacio suficiente para evitar superposición con el botón flotante */
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 16px;
+}
+
+.spacer {
+  height: 64px; /* Altura suficiente para evitar que el botón flotante tape elementos */
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 16px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.filter-container ion-label {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.pagination-container {
+  margin-bottom: 100px; /* Espacio suficiente para evitar superposición con el botón flotante */
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 16px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: var(--ion-text-color);
+}

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Publicaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Spinner de carga -->
+  <ng-container *ngIf="isLoading; else publicationList">
+    <div class="loading-container">
+      <ion-spinner></ion-spinner>
+      <p>Cargando publicaciones...</p>
+    </div>
+  </ng-container>
+
+  <!-- Lista de publicaciones -->
+  <ng-template #publicationList>
+    <!-- Selector de cantidad de publicaciones -->
+    <div class="filter-container">
+      <ion-label>Mostrar:</ion-label>
+      <ion-select
+        [(ngModel)]="itemsPerPage"
+        (ionChange)="onItemsPerPageChange($event)"
+        [value]="itemsPerPage"
+        interface="popover"
+      >
+        <ion-select-option value="10">10</ion-select-option>
+        <ion-select-option value="20">20</ion-select-option>
+        <ion-select-option value="50">50</ion-select-option>
+        <ion-select-option value="100">100</ion-select-option>
+      </ion-select>
+    </div>
+
+    <ion-list>
+      <ion-item *ngFor="let publication of displayedPublications">
+        <ion-thumbnail slot="start">
+          <img [src]="publication.image" alt="Image" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ publication.title }}</h2>
+          <p>{{ publication.date | date }}</p>
+        </ion-label>
+        <ion-button
+          fill="clear"
+          color="danger"
+          (click)="presentDeleteModal(publication)"
+        >
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <!-- Contenedor de paginación -->
+    <div class="pagination-container">
+      <div class="pagination">
+        <ion-button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</ion-button>
+        <ion-label>Página {{ currentPage }} de {{ Math.ceil(publications.length / itemsPerPage) }}</ion-label>
+        <ion-button (click)="nextPage()" [disabled]="currentPage === Math.ceil(publications.length / itemsPerPage)">Siguiente</ion-button>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Botón flotante para agregar nueva publicación -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="navigateTo('/new')">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

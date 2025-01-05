@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Confirmar Eliminación</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancelDelete()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="modal-container">
+    <p class="modal-text">
+      ¿Estás seguro de que deseas eliminar la publicación
+      <strong>"{{ publicationTitle }}"</strong>?
+    </p>
+    <ion-button expand="block" color="danger" class="modal-button" (click)="confirmDelete()">Eliminar</ion-button>
+    <ion-button expand="block" color="light" class="modal-button" (click)="cancelDelete()">Cancelar</ion-button>
+  </div>
+</ion-content>
